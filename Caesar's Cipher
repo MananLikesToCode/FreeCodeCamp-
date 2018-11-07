@@ -1,0 +1,31 @@
+function rot13(str) { 
+
+var finalString = "";
+
+var i = 0; 
+
+while(i< str.length){
+  
+  var codeTable = str[i].charCodeAt();
+  var codeTableAM = codeTable + 13;
+  var codeTableNZ = codeTable - 13; 
+
+  if(codeTable >= 65 && codeTable <= 77){
+   finalString +=  String.fromCharCode(codeTableAM); 
+  }
+
+  if(codeTable >= 78 && codeTable <= 90){
+    finalString += String.fromCharCode(codeTableNZ);
+  }
+
+  if(codeTable < 65 || codeTable > 90){
+    finalString += str[i];
+  }
+
+  i++;
+  }
+  return finalString;
+}
+
+rot13("SERR PBQR PNZC");
+
