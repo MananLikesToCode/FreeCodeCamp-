@@ -1,0 +1,21 @@
+function palindrome(str) {
+  str = str.toLowerCase(); 
+  var strng = "";
+   
+  for(var i = 0; i < str.length; i++){
+    if(str.charAt(i).match(/[a-z0-9]/i)){
+ strng += str.charAt(i); 
+    }
+    
+  }
+  var backwards = strng.split("").reverse().join("");
+  if (backwards == strng){
+  return true;
+} 
+else{
+return false; 
+}
+
+
+}
+palindrome("eye");
